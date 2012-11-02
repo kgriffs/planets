@@ -1,6 +1,10 @@
+#!/usr/bin/env ruby
+
 module ZOrder
   Background, Player, UI = *0..2
 end
+
+$LOAD_PATH << "."
 
 # Need gosu, actor, and supporting_actors since the rest of the classes depend on them
 require 'gosu'
@@ -26,14 +30,7 @@ class GameWindow < Gosu::Window
 	end
 	
   def initialize	
-		fullscreen =
-			if ARGV.length > 0
-				ARGV[0] != "-w"
-			else
-				true
-			end
-	
-    super(1024, 768, fullscreen, 20)
+    super(1200, 675, false)
     self.caption = "Planets!"
 
 		@stage = SpaceStage.new(self)
@@ -52,9 +49,9 @@ class GameWindow < Gosu::Window
   def button_down(id)
 		return if @shutting_down
 
-    if id == Gosu::Button::KbEscape
+    if id == Gosu::Button::KbEscape || id == Gosu::Button::KbQ
 			@shutting_down = true
-			@background_music.stop
+			@background_music.stop if @background_music
 			@background_music = nil
 					
       close

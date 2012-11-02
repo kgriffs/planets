@@ -148,7 +148,7 @@ end
 
 class BlackHoleActor < Actor
 	def initialize(window)
-		tint = 0x07FFFFFF
+		tint = 0x04FFFFFF
 		filename = "media/black_hole.png"
 		
 		super(
@@ -157,10 +157,11 @@ class BlackHoleActor < Actor
 			:x_position => rand(window.width),
 			:y_position => rand(window.height),
 			:z_order => ZOrder::Player,
+			:scale => 0.1,
 			:tint => tint
 		)
 
-		@gravity_factor =	64.0
+		@gravity_factor =	128.0
 	end
 	
 	def angle_from(x, y)

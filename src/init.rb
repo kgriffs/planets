@@ -1,1 +1,1 @@
-load 'planets.rbw'
+load 'planets.rb'

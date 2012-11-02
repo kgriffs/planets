@@ -8,7 +8,7 @@ class Stage < SceneNode
 	end
 	
 	def draw
-		@image.draw(@background_x, 0)
+		@image.draw(@background_x, 0, 0, 1.2, 1.2)
 #
 #		@image.draw(@window.width + @background_x, 0)
 		

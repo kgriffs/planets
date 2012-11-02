@@ -115,7 +115,7 @@ class SpaceStage < Stage
 		make_players(2)
 
 		# Assumes players are already created
-		make_planets(10)
+		make_planets(5)
 		
 		make_black_holes(1)
 
